@@ -1,0 +1,45 @@
+##Instalación de Mongo en el Servidor
+Para poder utilizar MongoDB con PHP hay que instalar la extesión correspondiente de PHP.
+La manera mas fácil es mediante el gestor de extensiones `PECL`. Si no está instalado en el sistema se puede instalar con los siguientes comandos:
+
+```bash
+sudo apt-get install php-pear php5-dev
+```
+Una vez instaladas las dependencias ya se puede instalar cualquier extensión de PHP mediante:
+
+```bash
+sudo pecl install mongo
+```
+ Normalmente al final se la instalación se le preguntará si quiere añadir la extensión al archivo `php.ini`. En el caso de que no lo haga hay que añadir esta configuración a mano.
+
+```bash
+#Archivo /etc/php5/apache2/php.ini
+extension=mongo.so
+```
+
+##Configuración del Bundle RMMongoBundle en Symfony
+
+Para poder utilizar el bundle hay que añadir la siguiente configuración al archivo `app/config/config.yml` 
+
+
+```yaml
+rm_mongo:
+  default_connection: default
+  connections:
+    default:
+      host: 192.168.100.92
+      port: 27017
+      database: 1
+    icca:
+      host: 192.168.100.92
+      port:
+      database: 1
+```
+
+Hay que añadir tantas conexiones como empresas haya. Por cada empresa hay que definir 3 parámetros:
+
+- `host`: La dirección IP del servidor donde esté alojada la base de datos de `MongoDB` de ese cliente.
+- `port`: el puerto que utiliza.
+- `database`: el nombre de la base de datos que corresponda a ese cliente.
+
+Si no se define ninguna conexión se utilizará la configuración por defecto definida en la conexión `default`. El nombre utilizado para definir la conexión debe corresponder al **nombre de alguna empresa definida en el servidor LDAP  en minúsculas**.

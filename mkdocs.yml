@@ -1,0 +1,7 @@
+site_name: Relational Messages
+pages:
+  - [index.md, Home]
+  - [entorno/Instalacion.md, Preparación del entorno]
+  - [entorno/mongo.mdown, Preparación del entorno]
+  
+theme: readthedocs
