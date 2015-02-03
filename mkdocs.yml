@@ -3,5 +3,6 @@ pages:
   - [index.md, Home]
   - [entorno/Instalacion.md, Preparación del entorno]
   - [entorno/mongo.mdown, Preparación del entorno]
+  - [pentaho.mdown, Migración MongoDB]
   
 theme: readthedocs

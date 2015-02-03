@@ -1,0 +1,38 @@
+##Instalacion componente MongoDB en Jaspersoft ETL Express
+
+Descargar los siguientes componentes de sus repositroios:
+
+  - [tMongoDBConnection](https://github.com/adrien-mogenet/tMongoDBConnection)
+  - [tMongoDBOutput](https://github.com/adrien-mogenet/tMongoDBOutput)
+
+
+Descomprimir cada archivo y colocar en la siguiente ruta de ficheros:
+
+	dir_jaspersoft/plugins/org.talend.designer.components.localprovider_5.2.2.r99271/component
+
+Esta solución no me funciona.
+
+
+##ETL con Pentaho
+
+Este programa no require instalación, tan solo es necesario descomprimir el contenido en `C:\` 
+y ejecutar el archivo `Spoon.bat`.
+
+Una vez iniciado el programa hay que crear una nueva **Transformación**
+
+	Fichero > Nuevo > Transformación
+
+Para poder traspasar datos desde una base de datos **MySQL** a una base de datos **MongoDB** son necesarios dos componentes:
+
+1. `Entrada Tabla`: Para leer datos de cualquier tabla de cualquier base de datos.
+2. `MongoDB Output`: Para poder transformar las datos a una estructura compatible con MongoDB
+
+Para ello arrastramos desde la *paleta Design* a nuestro entorno de trabajo los componentes que se encuentran en
+
+```
+	+--Entrada
+	|  +-- Entrada Tabla
+	+--Big Data
+	   +--MongoDBOutput
+```
+
