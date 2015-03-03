@@ -4,5 +4,6 @@ pages:
   - [entorno/Instalacion.md, Preparación del entorno]
   - [entorno/mongo.mdown, Preparación del entorno]
   - [pentaho.mdown, Migración MongoDB]
+  - [amazon_ses.md,  Amazon SES]
   
 theme: readthedocs
