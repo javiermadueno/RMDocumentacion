@@ -5,5 +5,7 @@ pages:
   - [entorno/mongo.mdown, Preparación del entorno]
   - [pentaho.mdown, Migración MongoDB]
   - [amazon_ses.md,  Amazon SES]
+  - [hive/hive.md, Hive]
   
 theme: readthedocs
+use_directory_urls: false

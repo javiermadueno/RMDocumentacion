@@ -17,7 +17,7 @@
 ###SMTP
 Se puede configurar para que todos los mensajes salientes se envien a traves del servidor de correo de Amazon SES.
 
-Ejemplo de configuración en *Symfony2*:
+Ejemplo de configuración en *Symfony2* con SwiftMailer:
 
 	# app/config/config.yml
 	swiftmailer:
@@ -45,8 +45,17 @@ Es la manera mas avanzada. Para acceder a la API se puede utilizar el SDK de Ama
 * Amazon SES **permite especificar un máximo de 50 destinatarios para cada mensaje** que envíe. O lo que es lo mismo: el número total de destinatarios incluidos en los campos Para:, CC: y CCO: no debe ser superior a 50. Si necesita enviar un correo electrónico a más de 50 destinatarios, necesitará enviar varios mensajes, cada uno de ellos dirigido a 50 destinatarios o menos.
 
 
-* Los nuevos usuarios de Amazon SES que hayan recibido acceso de producción pueden enviar hasta 10 000 mensajes de correo electrónico en un periodo de 24 horas, a un ritmo máximo de 5 correos electrónicos por segundo
+* Los nuevos usuarios de Amazon SES que hayan recibido acceso de producción pueden enviar hasta 10 000 mensajes de correo electrónico en un periodo de 24 horas, a un ritmo máximo de 5 correos electrónicos por segundo. La cuota va aumentando automáticamente según la 'calidad' de los mensajes enviados.
 
 ##Precio
 El precio es de **0.10$ por cada 1000 mensajes de correo**. Condiserando un mensaje de correo como una comunicación a cada destinatario.
 En el caso de llevar archivos adjuntos se facturarán **0,12$ por GB** de archivos adjuntos enviados.
+
+##Uso de la Interfaz SMTP
+###Obtener las credenciales de acceso SMTP
+1. Acceder a la consola de Amazon SES en [https://console.aws.amazon.com/ses](https://console.aws.amazon.com/)
+2. Acceder a la sección SES
+
+
+
+[Amazon SES Developer Guide](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html)
