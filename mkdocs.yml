@@ -7,6 +7,7 @@ pages:
   - [amazon_ses.md,  Amazon SES]
   - [ldap.md, LDAP]
   - [hive/hive.md, Hive]
+  - [cloudera/instalacion.md, Cloudera]
   
   
 theme: readthedocs
